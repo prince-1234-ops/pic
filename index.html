@@ -8,7 +8,7 @@
 <style>
     body{
         font-family: Arial, sans-serif;
-        background: linear-gradient(to right,#4facfe,#00f2fe);
+        background: "C:\Users\STUDENTS\Pictures\pic.jpg";
         margin:0;
         padding:0;
         display:flex;
@@ -18,7 +18,7 @@
     }
 
     .quiz-container{
-        background:white;
+        background:tranparent;
         width:450px;
         padding:25px;
         border-radius:15px;
@@ -42,11 +42,11 @@
     .question{
         font-size:20px;
         margin-bottom:15px;
-        color:#222;
+        color:gold;
     }
 
     .option{
-        background:#f1f1f1;
+        background:purple;
         padding:10px;
         margin:8px 0;
         border-radius:8px;
@@ -55,7 +55,7 @@
     }
 
     .option:hover{
-        background:#dbeafe;
+        background:tranparent;
     }
 
     button{
@@ -64,14 +64,14 @@
         margin-top:15px;
         border:none;
         border-radius:8px;
-        background:#007bff;
+        background:tranparent;
         color:white;
         font-size:16px;
         cursor:pointer;
     }
 
     button:hover{
-        background:#2871c0;
+        background:purple;
     }
 
     #result{
@@ -94,6 +94,7 @@
         <option value="math">Mathematics</option>
         <option value="biology">Biology</option>
         <option value="chemistry">Chemistry</option>
+        <option value="generalstudy">generalstudy</option>
     </select>
 
     <div id="quiz">
@@ -119,9 +120,12 @@ answer: "Newton"
 question: "Speed = ?",
 options: ["Distance × Time", "Distance / Time", "Mass × Velocity", "Force / Area"],
 answer: "Distance / Time"
-}
+},
+    {
+    question: "what is the si unit of power ?",
+options: ["watt", "jules", "newton", "meter"],
+answer: "watt"
 ],
-
 math: [
 {
 question: "What is 12 × 8?",
@@ -145,7 +149,11 @@ answer: "Heart"
 question: "Plants make food by?",
 options: ["Respiration", "Photosynthesis", "Digestion", "Excretion"],
 answer: "Photosynthesis"
-}
+},
+    {
+    question: "what organ filters blood?",
+options: ["liver", "heart", "kedney", "eyes"],
+answer: "kedney"
 ],
 
 chemistry: [
@@ -203,7 +211,7 @@ function loadQuestion(){
                 btn.style.pointerEvents = "none";
             });
 
-            div.style.background = "#90ee90";
+            div.style.background = "tranparent";
         };
 
         optionsEl.appendChild(div);
@@ -240,7 +248,7 @@ loadQuestion();
 
 body{
     font-family: Arial;
-    background: linear-gradient(to right,#36d1dc,#5b86e5);
+    background: linear-gradient(600deg black,blue);
     display:flex;
     justify-content:center;
     align-items:center;
@@ -248,7 +256,7 @@ body{
 }
 
 .container{
-    background:white;
+    background:tranparent;
     padding:30px;
     border-radius:15px;
     width:350px;
@@ -270,7 +278,7 @@ input{
 button{
     width:100%;
     padding:12px;
-    background:#007bff;
+    background:linear-gradient(600deg black,blue);
     color:white;
     border:none;
     border-radius:8px;
@@ -279,7 +287,7 @@ button{
 }
 
 button:hover{
-    background:#0056b3;
+    background:black;
 }
 
 #message{
@@ -341,7 +349,7 @@ function signup(){
 
 body{
     font-family:Arial;
-    background:#f2f2f2;
+    background:linear-gradient(600deg black,blue);
     display:flex;
     justify-content:center;
     align-items:center;
@@ -349,7 +357,7 @@ body{
 }
 
 .container{
-    background:white;
+    background:tranparent;
     padding:30px;
     border-radius:15px;
     width:400px;
@@ -368,14 +376,14 @@ input{
 button{
     padding:12px 20px;
     border:none;
-    background:#007bff;
+    background:tranparent;
     color:white;
     border-radius:8px;
     cursor:pointer;
 }
 
 button:hover{
-    background:#0056b3;
+    background:black;
 }
 
 #result{
