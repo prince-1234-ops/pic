@@ -1,4 +1,11 @@
+
 <!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body>
+  <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -8,7 +15,7 @@
 <style>
     body{
         font-family: Arial, sans-serif;
-        background-image: url("images/pic.jpg")";
+        background: linear-gradient(to right,#4facfe,#00f2fe);
         margin:0;
         padding:0;
         display:flex;
@@ -18,7 +25,7 @@
     }
 
     .quiz-container{
-        background:tranparent;
+        background:white;
         width:450px;
         padding:25px;
         border-radius:15px;
@@ -42,11 +49,11 @@
     .question{
         font-size:20px;
         margin-bottom:15px;
-        color:gold;
+        color:#222;
     }
 
     .option{
-        background:purple;
+        background:#f1f1f1;
         padding:10px;
         margin:8px 0;
         border-radius:8px;
@@ -55,7 +62,7 @@
     }
 
     .option:hover{
-        background:linear-gradient(600deg black,blue)
+        background:#dbeafe;
     }
 
     button{
@@ -64,14 +71,14 @@
         margin-top:15px;
         border:none;
         border-radius:8px;
-        background:linear-gradient(600deg black,blue);
+        background:#007bff;
         color:white;
         font-size:16px;
         cursor:pointer;
     }
 
     button:hover{
-        background:linear-gradient(600deg black,blue);
+        background:#0056b3;
     }
 
     #result{
@@ -87,14 +94,13 @@
 <body>
 
 <div class="quiz-container">
-    <h1>quizal</h1>
+    <h1>Science Quiz App</h1>
 
     <select id="subject-select">
         <option value="physics">Physics</option>
         <option value="math">Mathematics</option>
         <option value="biology">Biology</option>
         <option value="chemistry">Chemistry</option>
-        <option value="generalstudy">generalstudy</option>
     </select>
 
     <div id="quiz">
@@ -120,12 +126,9 @@ answer: "Newton"
 question: "Speed = ?",
 options: ["Distance × Time", "Distance / Time", "Mass × Velocity", "Force / Area"],
 answer: "Distance / Time"
-},
-    {
-    question: "what is the si unit of power ?",
-options: ["watt", "jules", "newton", "meter"],
-answer: "watt"
+}
 ],
+
 math: [
 {
 question: "What is 12 × 8?",
@@ -149,11 +152,7 @@ answer: "Heart"
 question: "Plants make food by?",
 options: ["Respiration", "Photosynthesis", "Digestion", "Excretion"],
 answer: "Photosynthesis"
-},
-    {
-    question: "what organ filters blood?",
-options: ["liver", "heart", "kedney", "eyes"],
-answer: "kedney"
+}
 ],
 
 chemistry: [
@@ -211,7 +210,249 @@ function loadQuestion(){
                 btn.style.pointerEvents = "none";
             });
 
-            div.style.background = "tranparent";
+            div.style.background = "#90ee90";
+        };
+
+        optionsEl.appendChild(div);
+    });
+}
+
+function nextQuestion(){
+
+    currentQuestion++;
+
+    if(currentQuestion < quizzes[selectedSubject].length){
+        loadQuestion();
+    } else {
+        document.getElementById("quiz").innerHTML = "";
+        resultEl.innerHTML = 
+        "You scored " + score + " out of " + quizzes[selectedSubject].length;
+    }
+}
+
+loadQuestion();
+
+</script>
+
+</body>
+</html>
+  <section class="hero">
+    <div>
+      <h1>Build accessible interfaces faster</h1>
+      <p>Create design systems that delight users and empower teams.</p>
+      <a class="cta" href="#" style="display:inline-block;padding:12px 24px;border-radius:999px;background:#fff;color:#0f172a;font-weight:600;text-decoration:none;">Start prototyping</a>
+    </div>
+    <figure>
+      <img src="./IMAGES/a.i.l.gp2.jpg"alt="Dashboard preview" style="width:100%;border-radius:20px;">
+    </figure>
+  </section>
+</body>
+</html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Science Quiz App</title>
+
+<style>
+    body{
+        font-family: Arial, sans-serif;
+        background: linear-gradient(to right,#4facfe,#00f2fe);
+        margin:0;
+        padding:0;
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        height:100vh;
+    }
+
+    .quiz-container{
+        background:rgb(135, 25, 25);
+        width:450px;
+        padding:25px;
+        border-radius:15px;
+        box-shadow:0 4px 15px rgba(246, 244, 244, 0.3);
+    }
+
+    h1{
+        text-align:center;
+        color:#333;
+    }
+
+    #subject-select{
+        width:100%;
+        padding:10px;
+        margin-bottom:20px;
+        border-radius:8px;
+        border:1px solid #ccc;
+        font-size:16px;
+    }
+
+    .question{
+        font-size:20px;
+        margin-bottom:15px;
+        color:#222;
+    }
+
+    .option{
+        background:#776d6d;
+        padding:10px;
+        margin:8px 0;
+        border-radius:8px;
+        cursor:pointer;
+        transition:0.3s;
+    }
+
+    .option:hover{
+        background:#dbeafe;
+    }
+
+    button{
+        width:100%;
+        padding:12px;
+        margin-top:15px;
+        border:none;
+        border-radius:8px;
+        background:#007bff;
+        color:white;
+        font-size:16px;
+        cursor:pointer;
+    }
+
+    button:hover{
+        background:#2871c0;
+    }
+
+    #result{
+        text-align:center;
+        font-size:22px;
+        font-weight:bold;
+        margin-top:20px;
+        color:green;
+    }
+</style>
+</head>
+
+<body>
+
+<div class="quiz-container">
+    <h1>Science Quiz App</h1>
+
+    <select id="subject-select">
+        <option value="physics">Physics</option>
+        <option value="math">Mathematics</option>
+        <option value="biology">Biology</option>
+        <option value="chemistry">Chemistry</option>
+    </select>
+
+    <div id="quiz">
+        <div class="question" id="question">Question text</div>
+        <div id="options"></div>
+        <button onclick="nextQuestion()">Next Question</button>
+    </div>
+
+    <div id="result"></div>
+</div>
+
+<script>
+
+const quizzes = {
+
+physics: [
+{
+question: "What is the SI unit of force?",
+options: ["Newton", "Joule", "Pascal", "Watt"],
+answer: "Newton"
+},
+{
+question: "Speed = ?",
+options: ["Distance × Time", "Distance / Time", "Mass × Velocity", "Force / Area"],
+answer: "Distance / Time"
+}
+],
+
+math: [
+{
+question: "What is 12 × 8?",
+options: ["96", "88", "108", "86"],
+answer: "96"
+},
+{
+question: "Value of π approximately?",
+options: ["2.14", "3.14", "4.13", "1.34"],
+answer: "3.14"
+}
+],
+
+biology: [
+{
+question: "What organ pumps blood?",
+options: ["Liver", "Brain", "Heart", "Lungs"],
+answer: "Heart"
+},
+{
+question: "Plants make food by?",
+options: ["Respiration", "Photosynthesis", "Digestion", "Excretion"],
+answer: "Photosynthesis"
+}
+],
+
+chemistry: [
+{
+question: "Chemical symbol of water?",
+options: ["O2", "CO2", "H2O", "NaCl"],
+answer: "H2O"
+},
+{
+question: "pH less than 7 means?",
+options: ["Neutral", "Basic", "Acidic", "Salt"],
+answer: "Acidic"
+}
+]
+
+};
+
+let currentQuestion = 0;
+let score = 0;
+let selectedSubject = "physics";
+
+const questionEl = document.getElementById("question");
+const optionsEl = document.getElementById("options");
+const resultEl = document.getElementById("result");
+const subjectSelect = document.getElementById("subject-select");
+
+subjectSelect.addEventListener("change", () => {
+    selectedSubject = subjectSelect.value;
+    currentQuestion = 0;
+    score = 0;
+    resultEl.innerHTML = "";
+    loadQuestion();
+});
+
+function loadQuestion(){
+
+    const quiz = quizzes[selectedSubject];
+    const q = quiz[currentQuestion];
+
+    questionEl.innerText = q.question;
+    optionsEl.innerHTML = "";
+
+    q.options.forEach(option => {
+
+        const div = document.createElement("div");
+        div.classList.add("option");
+        div.innerText = option;
+
+        div.onclick = () => {
+            if(option === q.answer){
+                score++;
+            }
+
+            Array.from(optionsEl.children).forEach(btn=>{
+                btn.style.pointerEvents = "none";
+            });
+
+            div.style.background = "#90ee90";
         };
 
         optionsEl.appendChild(div);
@@ -248,7 +489,7 @@ loadQuestion();
 
 body{
     font-family: Arial;
-    background: linear-gradient(600deg black,blue);
+    background: linear-gradient(to right,#36d1dc,#5b86e5);
     display:flex;
     justify-content:center;
     align-items:center;
@@ -256,7 +497,7 @@ body{
 }
 
 .container{
-    background:tranparent;
+    background:white;
     padding:30px;
     border-radius:15px;
     width:350px;
@@ -278,7 +519,7 @@ input{
 button{
     width:100%;
     padding:12px;
-    background:linear-gradient(600deg black,blue);
+    background:#007bff;
     color:white;
     border:none;
     border-radius:8px;
@@ -287,7 +528,7 @@ button{
 }
 
 button:hover{
-    background:black;
+    background:#0056b3;
 }
 
 #message{
@@ -296,14 +537,14 @@ button:hover{
     color:green;
 }
 
-</style>
+</>
 </head>
 
 <body>
 
 <div class="container">
 
-    <h2>Sign Up</h2>
+    <h2>Sign styleUp</h2>
 
     <input type="text" id="username" placeholder="Enter Username">
 
@@ -316,25 +557,6 @@ button:hover{
     <div id="message"></div>
 
 </div>
-
-<script>
-
-function signup(){
-
-    let username = document.getElementById("username").value;
-    let email = document.getElementById("email").value;
-    let password = document.getElementById("password").value;
-
-    if(username === "" || email === "" || password === ""){
-        document.getElementById("message").innerHTML = "Please fill all fields";
-        document.getElementById("message").style.color = "red";
-    }
-    else{
-        document.getElementById("message").innerHTML =
-        "Sign Up Successful!";
-        document.getElementById("message").style.color = "green";
-    }
-}
 
 </script>
 
@@ -349,7 +571,7 @@ function signup(){
 
 body{
     font-family:Arial;
-    background:linear-gradient(600deg black,blue);
+    background:#c2b8b8;
     display:flex;
     justify-content:center;
     align-items:center;
@@ -357,7 +579,7 @@ body{
 }
 
 .container{
-    background:tranparent;
+    background:white;
     padding:30px;
     border-radius:15px;
     width:400px;
@@ -376,14 +598,14 @@ input{
 button{
     padding:12px 20px;
     border:none;
-    background:tranparent;
-    color:white;
+    background:#007bff;
+    color:rgb(7, 6, 6);
     border-radius:8px;
     cursor:pointer;
 }
 
 button:hover{
-    background:black;
+    background:#0056b3;
 }
 
 #result{
@@ -426,7 +648,3 @@ function showScore(){
     "Score: " + score + " / " + total;
 }
 
-</script>
-
-</body>
-</html>
